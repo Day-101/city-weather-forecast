@@ -4,6 +4,14 @@ import axios from "axios";
 import "leaflet/dist/leaflet.css";
 import cities from "./cities";
 import WeatherForecast from "./WeatherForecast";
+import { Icon } from "leaflet";
+
+const customMarkerIcon = new Icon({
+  iconUrl: "/assets/marker-icon-2x.png",
+  iconSize: [25, 41],
+  iconAnchor: [12.5, 41],
+  popupAnchor: [0, -41],
+});
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -31,6 +39,7 @@ function App() {
           <Marker
             key={index}
             position={[city.lat, city.lon]}
+            icon={customMarkerIcon}
             eventHandlers={{
               click: () => {
                 fetchWeatherData(city.lat, city.lon);
