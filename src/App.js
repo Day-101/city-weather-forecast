@@ -3,9 +3,11 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import axios from "axios";
 import "leaflet/dist/leaflet.css";
 import cities from "./cities";
+import WeatherForecast from "./WeatherForecast";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(null);
 
   const fetchWeatherData = async (lat, lon) => {
     const response = await axios.get(
@@ -32,10 +34,18 @@ function App() {
             eventHandlers={{
               click: () => {
                 fetchWeatherData(city.lat, city.lon);
+                setSelectedCity(city.name);
               },
             }}
           >
-            <Popup>{city.name}</Popup>
+            <Popup>
+              {city.name}
+              <WeatherForecast
+                cityName={city.name}
+                selectedCity={selectedCity}
+                weatherData={weatherData}
+              />
+            </Popup>
           </Marker>
         ))}
       </MapContainer>
