@@ -19,31 +19,31 @@ Before you start, make sure you have the following installed:
 
 1. Clone the repository:
 
-##`git clone https://github.com/Day-101/city-weather-forecast`
-##`cd city-weather-forecast`
+`git clone https://github.com/Day-101/city-weather-forecast`
+`cd city-weather-forecast`
 
 2. Install dependencies:
 
-##`npm install`
+`npm install`
 
 Or, if you are using Yarn:
 
-##`yarn`
+`yarn`
 
 
 3. Build the React application:
 
-##`npm run build`
+`npm run build`
 
 
 Or, if you are using Yarn:
 
-##`yarn build`
+`yarn build`
 
 
 4. Start the application using Docker Compose:
 
-##`docker compose up --build`
+`docker compose up --build`
 
 
 5. Open your browser and go to `http://localhost` to see the City Weather Forecast application.
