@@ -49,7 +49,6 @@ function App() {
             }}
           >
             <Popup>
-              {city.name}
               <WeatherForecast
                 cityName={city.name}
                 selectedCity={selectedCity}
