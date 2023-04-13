@@ -19,8 +19,9 @@ function App() {
 
   const fetchWeatherData = async (lat, lon) => {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&appid=539a92a71fbb1b6ee46f8afdfc95bb2e`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=539a92a71fbb1b6ee46f8afdfc95bb2e`
     );
+
     setWeatherData(response.data);
   };
 
